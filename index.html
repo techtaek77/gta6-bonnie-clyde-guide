@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA 6와 보니와 클라이드</title>
+<meta name="description" content="1930년대 실존 범죄 커플 보니와 클라이드가 누구였는지, 전설과 실제의 차이를 짧게 알고 GTA 6 루시아·제이슨의 여정을 더 재밌게 보는 법. 테크텍 GTA 6 시리즈 1탄.">
+<style>
+:root{
+  --bg:#fbf6ec; --paper:#fffdf8; --ink:#22201c; --muted:#6b645a; --line:#e6ddcc;
+  --teal:#0f8a86; --orange:#e2662b; --pink:#d9467a; --sepia:#8a6a43; --sepia-bg:#f3e8d4;
+  --neon-bg:#fdeaf1; --ok:#1f8a4c; --bad:#c2402f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#191714; --paper:#221f1b; --ink:#f1ebe0; --muted:#b0a796; --line:#3a352d;
+    --teal:#4cc3bd; --orange:#f08a52; --pink:#f07aa4; --sepia:#d1ad7e; --sepia-bg:#2c2519;
+    --neon-bg:#2e1c25; --ok:#5fc98a; --bad:#f07a68;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#191714; --paper:#221f1b; --ink:#f1ebe0; --muted:#b0a796; --line:#3a352d;
+  --teal:#4cc3bd; --orange:#f08a52; --pink:#f07aa4; --sepia:#d1ad7e; --sepia-bg:#2c2519;
+  --neon-bg:#2e1c25; --ok:#5fc98a; --bad:#f07a68;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;line-height:1.75;font-size:17px;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 64px}
+header.hero{padding:40px 0 8px}
+.kicker{display:inline-block;font-size:13px;font-weight:700;color:var(--teal);border:1.5px solid var(--teal);border-radius:999px;padding:2px 12px;margin-bottom:12px}
+h1{font-size:clamp(27px,6vw,40px);line-height:1.3;margin:0 0 12px;letter-spacing:-.02em}
+h1 .a{color:var(--sepia)} h1 .b{color:var(--pink)}
+.lead{color:var(--muted);margin:0 0 20px}
+figure{margin:20px 0}
+figure img{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line);background:var(--paper)}
+figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
+h2{font-size:clamp(22px,4.6vw,28px);line-height:1.35;margin:52px 0 12px;letter-spacing:-.01em}
+h2 .num{display:inline-block;color:var(--orange);margin-right:8px;font-variant-numeric:tabular-nums}
+h3{font-size:19px;margin:24px 0 8px}
+p{margin:0 0 14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:16px 0}
+.summary{border-left:5px solid var(--teal)}
+.summary ol{margin:6px 0 0;padding-left:22px}
+.summary li{margin:6px 0}
+.guide{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1px dashed var(--teal);border-radius:16px;padding:14px 16px;margin:18px 0}
+.guide .who{flex:0 0 auto;font-weight:800;color:var(--teal);font-size:14px;white-space:nowrap}
+.guide p{margin:0}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.people{grid-template-columns:1fr}}
+.person{background:var(--sepia-bg);border-radius:16px;padding:16px 18px}
+.person.neon{background:var(--neon-bg)}
+.person .name{font-weight:800;font-size:18px}
+.person .meta{font-size:13px;color:var(--muted);margin-bottom:6px}
+.person p{font-size:15.5px;margin:0}
+/* timeline */
+.tl-btns{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tl-btns button{font:inherit;font-size:14px;font-weight:700;padding:6px 12px;border-radius:999px;border:1.5px solid var(--sepia);background:transparent;color:var(--sepia);cursor:pointer}
+.tl-btns button[aria-pressed="true"]{background:var(--sepia);color:var(--paper)}
+.tl-panel{background:var(--sepia-bg);border-radius:16px;padding:16px 18px;min-height:120px}
+.tl-panel .when{font-weight:800;color:var(--sepia);font-size:14px}
+.tl-panel .what{font-weight:800;font-size:18px;margin:2px 0 6px}
+.tl-panel p{margin:0;font-size:15.5px}
+/* legend vs real */
+.toggle{display:inline-flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;margin:8px 0 12px}
+.toggle button{font:inherit;font-size:14px;font-weight:700;padding:7px 16px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lr-list{list-style:none;margin:0;padding:0}
+.lr-list li{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;font-size:15.5px}
+.lr-list li b{display:block;font-size:13px;color:var(--muted);font-weight:700;margin-bottom:2px}
+/* table */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;background:var(--paper);border-radius:12px;overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+thead th{background:var(--sepia-bg);font-size:14px}
+thead th.neon{background:var(--neon-bg)}
+td:first-child{font-weight:700;white-space:nowrap}
+.tag{display:inline-block;font-size:12px;font-weight:800;border-radius:6px;padding:1px 7px;margin-left:4px}
+.tag.same{background:var(--teal);color:var(--paper)}
+.tag.diff{background:var(--orange);color:var(--paper)}
+/* tips */
+.tips{display:grid;gap:12px;counter-reset:tip}
+.tip{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;position:relative;padding-left:58px}
+.tip::before{counter-increment:tip;content:counter(tip);position:absolute;left:16px;top:16px;width:30px;height:30px;border-radius:50%;background:var(--pink);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.tip h3{margin:0 0 4px;font-size:17px}
+.tip p{margin:0;font-size:15.5px}
+/* quiz */
+.q{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:12px 0}
+.q .stem{font-weight:700;margin-bottom:10px}
+.q .ox{display:flex;gap:8px}
+.q .ox button{font:inherit;font-weight:800;font-size:16px;width:56px;padding:6px 0;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.q .ox button.right{border-color:var(--ok);color:var(--ok)}
+.q .ox button.wrong{border-color:var(--bad);color:var(--bad)}
+.q .ans{display:none;margin-top:10px;font-size:15px;color:var(--muted)}
+.q.done .ans{display:block}
+.next{background:linear-gradient(135deg,var(--neon-bg),var(--sepia-bg));border-radius:18px;padding:20px 22px;margin:28px 0}
+.next .label{font-size:13px;font-weight:800;color:var(--pink)}
+.next h3{margin:4px 0 8px}
+.next ul{margin:0;padding-left:20px}
+.src{font-size:14px;color:var(--muted)}
+.src ul{padding-left:18px}
+.src a{color:var(--teal);word-break:break-all}
+.notice{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);margin-top:36px;padding-top:16px}
+button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <span class="kicker">테크텍 GTA 6 시리즈 1탄 · 2026-11-20</span>
+  <h1><span class="a">보니와 클라이드</span>를 알고 보면<br><span class="b">GTA 6</span>가 두 배 재밌다</h1>
+  <p class="lead">어제(11월 19일) 나온 GTA 6의 두 주인공 루시아와 제이슨. 처음 소식이 나왔을 때부터 따라붙은 꼬리표가 "현대판 보니와 클라이드"였습니다. 그 원조가 누구였는지 5분이면 알 수 있게 정리했습니다. 게임 본편 스포일러는 없습니다.</p>
+  <figure>
+    <img src="images/hero.jpg" alt="왼쪽은 1930년대 흙길과 클래식 자동차, 오른쪽은 네온 노을 해변 도시. 가운데 벨로키가 낡은 신문과 게임 패드를 들고 서 있다" width="1600" height="900">
+    <figcaption>1934년 흙길과 2026년 네온 해변 사이에 선 벨로키 (AI 생성 삽화)</figcaption>
+  </figure>
+</header>
+
+<div class="card summary">
+  <strong>30초 요약</strong>
+  <ol>
+    <li><b>보니 파커와 클라이드 배로</b>는 1930년대 대공황기 미국 남부를 휩쓴 실제 범죄 커플입니다. 1934년 5월 경찰 매복으로 둘 다 사망했습니다.</li>
+    <li>이들이 "낭만적인 무법자 커플"로 기억되는 건 <b>신문에 실린 사진과 1967년 영화</b> 덕이 큽니다. 실제로는 경찰관을 포함해 여러 사람이 목숨을 잃었습니다.</li>
+    <li>GTA 6와의 연결은 <b>2022년 블룸버그 보도</b>("보니와 클라이드풍 커플 주인공")에서 시작됐습니다. Rockstar가 공식으로 확인한 적은 없습니다.</li>
+    <li>그래서 이 글은 "정답 맞히기"가 아니라, 원조 이야기를 알고 <b>루시아·제이슨의 선택을 비교하며 보는 감상법</b>입니다.</li>
+  </ol>
+</div>
+
+<div class="guide">
+  <span class="who">벨로키 한마디</span>
+  <p>와우로 치면 보니와 클라이드는 1930년대에 "2인 파티로 레이드 뛰다 전멸한 전설의 길드"입니다. 무용담만 남았지만 실제 공략 로그를 열어 보면 꽤 처참합니다.</p>
+</div>
+
+<h2><span class="num">01</span>보니와 클라이드는 누구였나</h2>
+<div class="people">
+  <div class="person">
+    <div class="name">보니 파커 (Bonnie Parker)</div>
+    <div class="meta">1910~1934 · 텍사스 출신</div>
+    <p>학창 시절 글쓰기 상을 받을 만큼 글재주가 있었고, 도피 중에도 시를 썼습니다. 클라이드를 만났을 때 이미 감옥에 간 남편과 결혼한 상태였고, 한 번도 이혼하지 않았습니다.</p>
+  </div>
+  <div class="person">
+    <div class="name">클라이드 배로 (Clyde Barrow)</div>
+    <div class="meta">1909~1934 · 텍사스 출신</div>
+    <p>가난한 소작농 집안 출신으로, 10대 때부터 좀도둑질로 경찰과 엮였습니다. 악명 높은 교도소 농장에서 수감 생활을 한 뒤 "다시는 감옥에 안 간다"는 생각으로 더 거칠어졌다고 전해집니다.</p>
+  </div>
+</div>
+<p>둘은 <b>1930년 1월 텍사스</b>에서 처음 만났습니다. 보니는 19살, 클라이드는 21살이었습니다. 때는 대공황 한복판이었습니다. 은행이 줄줄이 망하고 농가는 빚에 몰리던 시절이어서, 은행을 터는 무법자를 묘하게 응원하는 분위기도 있었습니다.</p>
+
+<h3>연표로 보는 4년</h3>
+<p>버튼을 눌러 시점을 바꿔 보세요.</p>
+<div class="tl-btns" role="group" aria-label="연표 시점 선택" id="tlBtns"></div>
+<div class="tl-panel" id="tlPanel" aria-live="polite"></div>
+
+<h2><span class="num">02</span>전설과 실제는 꽤 달랐다</h2>
+<figure>
+  <img src="images/legend.jpg" alt="1930년대 사진관에서 벨로키가 돋보기로 벽에 걸린 세피아 사진을 들여다보고 바닥에는 신문이 쌓여 있다" width="1600" height="900">
+  <figcaption>전설은 사진과 신문으로 커졌다 (AI 생성 삽화)</figcaption>
+</figure>
+<p>1933년 미주리주 조플린의 은신처에서 경찰이 현상 안 된 필름을 찾아냈습니다. 둘이 장난스럽게 포즈를 잡은 사진이 신문에 실리자 순식간에 전국 스타가 됐습니다. 요즘으로 치면 <b>SNS 바이럴</b>입니다. 그 이미지를 1967년 영화 「우리에게 내일은 없다」(Bonnie and Clyde)가 한 번 더 낭만적으로 굳혔습니다.</p>
+<div class="toggle" role="group" aria-label="전설과 실제 전환">
+  <button type="button" data-view="legend" aria-pressed="true">전설 버전</button>
+  <button type="button" data-view="real" aria-pressed="false">실제 버전</button>
+</div>
+<ul class="lr-list" id="lrList"></ul>
+
+<div class="guide">
+  <span class="who">벨로키 한마디</span>
+  <p>그래서 이 글은 둘을 멋진 커플로 띄우려는 게 아닙니다. 피해자가 있는 실화가 어떻게 "멋진 이야기"로 바뀌는지를 알면, GTA 6가 그 공식을 어떻게 비트는지가 보입니다.</p>
+</div>
+
+<h2><span class="num">03</span>GTA 6의 루시아와 제이슨은?</h2>
+<p>GTA 6는 플로리다를 닮은 가상의 주 <b>레오니다(Leonida)</b>와 바이스 시티가 무대입니다. 시리즈 최초로 커플이 함께 주인공을 맡았고, 루시아는 시리즈 첫 여성 주인공입니다. 아래 소개는 Rockstar 공식 사이트 설명을 요약한 것입니다.</p>
+<div class="people">
+  <div class="person neon">
+    <div class="name">루시아 카미노스</div>
+    <div class="meta">공식 소개 요약</div>
+    <p>걸음마를 떼자마자 아버지에게 싸우는 법을 배웠고, 가족을 위해 싸우다 레오니다 교도소에 갔습니다. 막 출소했고, 이번에는 판을 자기에게 유리하게 바꿀 계획이 있습니다.</p>
+  </div>
+  <div class="person neon">
+    <div class="name">제이슨 듀발</div>
+    <div class="meta">공식 소개 요약</div>
+    <p>그냥 편하게 살고 싶은데 일은 자꾸 꼬입니다. 루시아를 만난 게 인생 최고의 일일지 최악의 일일지 본인도 아직 모릅니다.</p>
+  </div>
+</div>
+
+<h3>원조 커플과 나란히 놓고 보기</h3>
+<div class="tbl-wrap">
+<table>
+  <thead><tr><th>비교 항목</th><th>보니 &amp; 클라이드 (1930~34)</th><th class="neon">루시아 &amp; 제이슨 (GTA 6)</th></tr></thead>
+  <tbody>
+    <tr><td>관계 <span class="tag same">닮음</span></td><td>연인이자 범죄 파트너</td><td>연인이자 범죄 파트너. 트레일러가 두 사람의 관계를 중심에 둠</td></tr>
+    <tr><td>배경 <span class="tag same">닮음</span></td><td>대공황. 돈도 일자리도 없던 시대</td><td>화려하지만 빈부 차가 큰 현대 레오니다</td></tr>
+    <tr><td>이미지 <span class="tag same">닮음</span></td><td>신문 사진이 전설을 만듦</td><td>트레일러에 SNS 영상·뉴스 화면이 많이 등장</td></tr>
+    <tr><td>출발점 <span class="tag diff">다름</span></td><td>클라이드의 전과와 도피가 중심</td><td>루시아의 출소와 "계획"으로 시작</td></tr>
+    <tr><td>결말 <span class="tag diff">다름</span></td><td>1934년 매복으로 사망. 이미 정해진 역사</td><td>플레이어가 겪어 가며 확인할 이야기</td></tr>
+    <tr><td>근거 <span class="tag diff">주의</span></td><td>역사 기록 (FBI·사료)</td><td>언론 보도와 트레일러 인상. Rockstar 미확인</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2><span class="num">04</span>알고 보면 더 재밌는 감상 포인트 3가지</h2>
+<figure>
+  <img src="images/watch.jpg" alt="밤의 거실에서 벨로키가 게임 패드를 쥐고 노을 해변 도로가 나온 TV를 보고, 옆 탁자에 세피아 사진과 역사책이 놓여 있다" width="1600" height="900">
+  <figcaption>역사책 한 장 펴 두고 플레이하기 (AI 생성 삽화)</figcaption>
+</figure>
+<div class="tips">
+  <div class="tip"><h3>누가 먼저 선을 넘는가</h3><p>원조 이야기는 보통 클라이드가 끌고 보니가 따라간 구도로 전해집니다. GTA 6는 출소한 루시아의 계획에서 출발합니다. 장면마다 "지금 핸들을 잡은 사람이 누구지?"를 보면 원조와 다른 점이 선명해집니다.</p></div>
+  <div class="tip"><h3>화면 속 '구경꾼'을 보라</h3><p>1933년 조플린 사진이 신문을 타고 퍼졌듯, GTA 6 트레일러는 SNS 영상과 뉴스 화면을 계속 끼워 넣습니다. 두 사람이 사건을 일으킬 때 화면 밖 구경꾼이 그걸 어떻게 소비하는지 보면, 90년 사이 "전설이 만들어지는 방식"이 어떻게 바뀌었는지 보입니다.</p></div>
+  <div class="tip"><h3>"믿어?"라는 질문이 나올 때마다</h3><p>커플 범죄 이야기의 진짜 긴장은 총격전이 아니라 <b>서로를 끝까지 믿을 수 있느냐</b>입니다. 원조는 가까운 사람의 제보로 끝났습니다. 신뢰가 흔들리는 장면이 나오면 1934년 5월 23일을 한 번 떠올려 보세요.</p></div>
+</div>
+
+<h2><span class="num">05</span>3초 OX 퀴즈</h2>
+<div id="quiz"></div>
+
+<div class="next">
+  <div class="label">다음 편 예고 · 2탄</div>
+  <h3>GTA 6의 기술, 쉬운 말로 뜯어보기</h3>
+  <ul>
+    <li>도시 하나를 통째로 돌리는 오픈월드는 어떻게 버틸까</li>
+    <li>사람·차·날씨가 따로 움직이는 것처럼 보이는 비결</li>
+    <li>전작 이후 13년, 개발 시간은 어디에 들어갔나</li>
+  </ul>
+</div>
+
+<div class="src">
+  <h3>출처</h3>
+  <ul>
+    <li>Rockstar Games, Grand Theft Auto VI 공식 사이트: <a href="https://www.rockstargames.com/VI">rockstargames.com/VI</a></li>
+    <li>FBI, Famous Cases: Bonnie and Clyde: <a href="https://www.fbi.gov/history/famous-cases/bonnie-and-clyde">fbi.gov/history/famous-cases/bonnie-and-clyde</a></li>
+    <li>PBS American Experience, Bonnie &amp; Clyde: <a href="https://www.pbs.org/wgbh/americanexperience/films/bonnieclyde/">pbs.org/.../bonnieclyde</a></li>
+    <li>Smithsonian Magazine, The Irresistible Bonnie Parker: <a href="https://www.smithsonianmag.com/history/the-irresistible-bonnie-parker-59411903/">smithsonianmag.com/...</a></li>
+    <li>TechRadar, 2022년 블룸버그 보도 정리 (보니와 클라이드풍 커플 주인공): <a href="https://www.techradar.com/news/gta-6-will-feature-a-female-protagonist-as-part-of-a-bonnie-and-clyde-pair">techradar.com/...</a></li>
+    <li>Gematsu, 트레일러 2 공개와 인물 소개 (2025-05-06): <a href="https://www.gematsu.com/2025/05/grand-theft-auto-vi-second-trailer-characters-and-places-detailed">gematsu.com/...</a></li>
+  </ul>
+</div>
+
+<div class="notice">
+  <p>이 페이지는 Rockstar Games와 관련 없는 개인 해설입니다. Grand Theft Auto 및 관련 명칭과 상표는 해당 권리자에게 있습니다. 게임 화면이나 공식 아트는 쓰지 않았고, 삽화는 테크텍 캐릭터 벨로키를 AI로 생성한 것입니다.</p>
+  <p>보니와 클라이드는 실제 피해자가 있는 범죄자입니다. 이 글은 범죄를 미화하려는 것이 아니며, 사망자 수처럼 자료마다 다른 숫자는 확정하지 않고 "여러 명"으로 적었습니다. GTA 6의 보니와 클라이드 연결은 Rockstar가 공식 확인하지 않은 보도 기반 비교입니다.</p>
+  <p>© 2026 TECHTAEK · 글·삽화 CC BY-NC-ND 4.0 (외부 자료 제외)</p>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var TL=[
+    {k:"1930",lab:"1930.1",when:"1930년 1월",what:"텍사스에서 처음 만남",body:"보니 19살, 클라이드 21살. 얼마 뒤 클라이드가 체포되자 보니가 몰래 총을 넣어 줘 탈옥을 도왔다는 이야기가 유명합니다."},
+    {k:"1932",lab:"1932",when:"1932년",what:"본격적인 도피 범죄 시작",body:"주유소, 작은 상점, 지방 은행을 털며 여러 주를 차로 옮겨 다녔습니다. 차를 훔쳐 주 경계를 넘는 수법 때문에 연방 수사기관도 쫓기 시작합니다."},
+    {k:"1933a",lab:"1933.4",when:"1933년 4월",what:"조플린 총격전과 사진 공개",body:"미주리주 조플린 은신처에서 경찰과 총격전 끝에 달아났습니다. 남겨진 필름 속 사진이 신문에 실리면서 전국적인 유명인이 됩니다."},
+    {k:"1933b",lab:"1933.7",when:"1933년 7월",what:"형 벅 배로를 잃음",body:"아이오와에서 경찰 포위망에 걸려 클라이드의 형 벅이 치명상을 입고 숨졌습니다. 일당이 크게 무너진 시점입니다."},
+    {k:"1934a",lab:"1934.1~4",when:"1934년 1~4월",what:"탈옥 습격과 여론 반전",body:"텍사스 교도소 농장 습격으로 동료들을 빼냈고, 4월 그레이프바인 근처에서 고속도로 순찰대원 두 명이 숨지면서 여론이 크게 돌아섭니다."},
+    {k:"1934b",lab:"1934.5",when:"1934년 5월 23일",what:"루이지애나 매복으로 최후",body:"전 텍사스 레인저 프랭크 해머가 이끈 추적대가 비엔빌 패리시의 시골길에서 매복했습니다. 일당과 가까운 집안의 제보가 결정적이었습니다. 두 사람 모두 그 자리에서 사망했습니다."},
+    {k:"1967",lab:"1967",when:"1967년",what:"영화가 전설을 굳힘",body:"아서 펜 감독, 워런 비티·페이 더너웨이 주연의 「우리에게 내일은 없다」가 둘을 반항적이고 매력적인 커플로 그리며 대중 이미지를 굳혔습니다."}
+  ];
+  var btns=document.getElementById("tlBtns"),panel=document.getElementById("tlPanel");
+  function showTL(i){
+    var t=TL[i];
+    panel.innerHTML='<div class="when">'+t.when+'</div><div class="what">'+t.what+'</div><p>'+t.body+'</p>';
+    Array.prototype.forEach.call(btns.children,function(b,j){b.setAttribute("aria-pressed",j===i?"true":"false");});
+  }
+  TL.forEach(function(t,i){
+    var b=document.createElement("button");b.type="button";b.textContent=t.lab;
+    b.addEventListener("click",function(){showTL(i);});btns.appendChild(b);
+  });
+  showTL(0);
+
+  var LR={
+    legend:[
+      ["이미지","가난한 사람들 편에 선 젊고 멋진 연인"],
+      ["수입","은행을 털어 큰돈을 번 대담한 강도"],
+      ["보니","기관총을 든 시가 문 여자 갱스터"],
+      ["끝","사랑 때문에 함께 죽은 비극의 커플"]
+    ],
+    real:[
+      ["이미지","경찰관을 포함해 여러 사람이 목숨을 잃었고, 피해자 가족이 있습니다"],
+      ["수입","주로 주유소·상점·작은 은행이라 한 번에 버는 돈은 크지 않았고, 늘 쫓기며 차에서 지냈습니다"],
+      ["보니","시가 사진은 장난으로 찍은 포즈라는 증언이 있고, 보니가 직접 총을 쐈는지는 지금도 논쟁입니다"],
+      ["끝","가까운 사람의 제보로 위치가 새어 나가 매복에 걸렸습니다"]
+    ]
+  };
+  var list=document.getElementById("lrList"),tbtn=document.querySelectorAll(".toggle button");
+  function showLR(v){
+    list.innerHTML=LR[v].map(function(r){return '<li><b>'+r[0]+'</b>'+r[1]+'</li>';}).join("");
+    tbtn.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.view===v?"true":"false");});
+  }
+  tbtn.forEach(function(b){b.addEventListener("click",function(){showLR(b.dataset.view);});});
+  showLR("legend");
+
+  var Q=[
+    {s:"Rockstar가 GTA 6는 보니와 클라이드를 모델로 했다고 공식 발표했다.",a:false,e:"아닙니다. 2022년 블룸버그 보도와 트레일러 인상에서 나온 비교이고, Rockstar는 확인하지 않았습니다."},
+    {s:"보니와 클라이드를 전국 스타로 만든 계기 중 하나는 은신처에서 나온 사진이었다.",a:true,e:"맞습니다. 1933년 조플린 은신처의 필름 사진이 신문에 실리며 유명해졌습니다."},
+    {s:"보니와 클라이드는 붙잡혀 재판을 받고 감옥에서 생을 마쳤다.",a:false,e:"아닙니다. 1934년 5월 23일 루이지애나 시골길 매복 현장에서 둘 다 사망했습니다."}
+  ];
+  var qz=document.getElementById("quiz");
+  Q.forEach(function(q,i){
+    var d=document.createElement("div");d.className="q";
+    d.innerHTML='<div class="stem">Q'+(i+1)+'. '+q.s+'</div><div class="ox"><button type="button" data-v="1">O</button><button type="button" data-v="0">X</button></div><div class="ans"></div>';
+    d.querySelectorAll("button").forEach(function(b){
+      b.addEventListener("click",function(){
+        var pick=b.dataset.v==="1",ok=pick===q.a;
+        d.querySelectorAll("button").forEach(function(x){x.classList.remove("right","wrong");});
+        b.classList.add(ok?"right":"wrong");
+        d.querySelector(".ans").textContent=(ok?"정답! ":"땡! ")+q.e;
+        d.classList.add("done");
+      });
+    });
+    qz.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>
